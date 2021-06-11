@@ -1,4 +1,4 @@
-# goose file system
+# Google file system review
 
 1) component failures
 
@@ -28,7 +28,7 @@
 
 ## Arch
 
-![1623293837727](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623293837727.png)
+![1623293837727](https://vintmd.github.io/photo/1623293837727.png)
 
 1) master control the each chunk server, each block locations and other meta infomations
 
@@ -42,7 +42,7 @@ secondary chunkserver
 
 ## Consistency model
 
-![1623296366858](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623296366858.png)
+![1623296366858](https://vintmd.github.io/photo/1623296366858.png)
 
 1) master control the global total order which used to apply mutation to one chunk
 
@@ -56,7 +56,7 @@ secondary chunkserver
 
 ### Lease and mutaion order
 
-![1623297437281](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623297437281.png)
+![1623297437281](https://vintmd.github.io/photo/1623297437281.png)
 
 1) client ask the primary(hold the lease) and other chunk location
 
@@ -91,7 +91,7 @@ secondary chunkserver
 
 ## Snapshot
 
-![1623309149425](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623309149425.png)
+![1623309149425](https://vintmd.github.io/photo/1623309149425.png)
 
 when master  receive the snapshot request, it release all the chunk server leases which can give the control that write to chunk back to master. when during this time ouccr the chunk write, it can copy the new chunk C` and replica this new chunk to other replicas.
 
@@ -110,7 +110,7 @@ when master  receive the snapshot request, it release all the chunk server lease
 * ofs memory engine use the global lock.
 * ofs db engine use txn share mode to lock the parent inode.
 
-![1623311148274](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623311148274.png)
+![1623311148274](https://vintmd.github.io/photo/1623311148274.png)
 
 ### Replica placement
 
@@ -118,7 +118,7 @@ maximize data reliability and availability, and maximize net-wor kbandwidth util
 
 ### Creation, Re-replication, Rebalancing 
 
-![1623314173358](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623314173358.png)
+![1623314173358](https://vintmd.github.io/photo/1623314173358.png)
 
 1) creation relate the space utilization, write behand(batch way) and the replica chunk spead.
 
@@ -136,17 +136,70 @@ distributed garbage collection knowledge
 
 after all opration the master trigger the period scan the chunks from the heart beat whether difference to the memory dir tree to decide whether clean the chunks!
 
-![1623317050747](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623317050747.png)
+![1623317050747](https://vintmd.github.io/photo/1623317050747.png)
+
+* ofs gc and life cycle are all bypass system which offer the interface to operation db data
+
+1) simple and reliable
+
+2) merge storage reclamation into background
+
+3) delay in reclaiming provide safety net against irreversible deletion
+
+* which same to the ofs this way might influence the efficient
 
 
 
+## Fault tolerance
+
+### Available
+
+1) fast recover
+
+* ofs use the parallel load snapshot and apply xlog to fast recover
+
+2) chunk replication
+
+* same to data stream in cos which use parity or eraseure codes
+
+3) master replication
+
+record log replica between each master, shadow master provide the read-only access even master is done.
+
+* like ofs use the election which follower catch up the xlog to keep the same dir tree to the master as far as possible.
+* only one master can create and delete replicas to prevent the split of brain issues.
 
 
 
+### Data intergrity
 
-## Pre
+chunkserver period detect the stale chunk(each chunk broken up into 64KB blocks, each has 32 bit checksum)
 
-this is the sub test
+* first and last blocks of the range being overwriten which need to be checked
+
+
+
+### Diagnostic tools
+
+logs and online monitor
+
+
+
+## Performance mainest
+
+1) read, write, append records
+
+* ofs read and write give to the cos
+* ofs append records give to the db
+* write behand and read ahead 
+
+2) google file system's read performance is better to write(write three or more replicas)
+
+
+
+## Reference
+
+
 
 
 
