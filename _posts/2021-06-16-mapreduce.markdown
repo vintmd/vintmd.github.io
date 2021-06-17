@@ -20,7 +20,7 @@ data processing on large clusters
 
 4) reduce worker remote read the intermediate files
 
-![1623813146557](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623813146557.png)
+![1623813146557](https://vintmd.github.io/photo/1623813146557.png)
 
 
 
@@ -30,7 +30,7 @@ worker's task(map or reduce) has three status idle, in-progress and completed, m
 
 workers to get status and record the intermediate files(local disks)
 
-![1623827057310](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623827057310.png)
+![1623827057310](https://vintmd.github.io/photo/1623827057310.png)
 
 ### Fault Tolerance
 
@@ -47,7 +47,7 @@ master ping every worker find the no-response worker
 
 3)  master broadcast to each worker let the reducer read data from normal worker
 
-![1623828957875](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623828957875.png)
+![1623828957875](https://vintmd.github.io/photo/1623828957875.png)
 
 #### master failure
 
@@ -64,7 +64,7 @@ write periodic checkpoints of the master data structures. use the checkpoint to 
 
 2) pieces of reduce decided by user which define the number of output files.
 
-![1623843856874](C:\Users\alantong\Desktop\vintmd.github.io\photo\1623843856874.png)
+![1623843856874](https://vintmd.github.io/photo/1623843856874.png)
 
 
 
