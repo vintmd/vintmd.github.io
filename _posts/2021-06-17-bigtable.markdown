@@ -1,2 +1,116 @@
-# BigTable
+# BigTable review
+
+A distributed storage system for managing structed data.
+
+## Introduction
+
+1) Dose not support full relational data model
+
+2) It provides clients with a simple data model which support the dynamic control over data layout and format.
+
+3) Data is indexed using row and column names that can be arbirtary strings.
+
+
+
+## Data model
+
+sparse, distributed, persistent multi-dimensional sorted map!
+
+map is indexed by a row key, column key and a timestamp.
+
+each value is an uniterpreted array of bytes.
+
+![1624361585121](https://vintmd.github.io/photo/1624361585121.png)
+
+### Rows
+
+Every read and write under a single row key is atomic, maintains data in lexicographic order by row key.
+
+Each row range is call the tablet, which is unit of distribution and load balancing.
+
+![1624362432881](https://vintmd.github.io/photo/1624362432881.png)
+
+1) row keys are organize in lexicographic order;
+
+2) the range of row is call the tablet;
+
+3) client can store the rows key to same prefix(reverse the url) to achieve the range query.
+
+
+
+### Column Families
+
+intent  the number of distinct column families in a table be small, a tale may have an unbounded number of columns.
+
+a column key is named using the following syntax: family:qualifier.
+
+
+
+### Timestamps
+
+Contain mult versions of the same data; these versions are indexed by timestamp.
+
+
+
+## Building blocks
+
+
+
+
+
+## Implementation
+
+
+
+
+
+## Refinements
+
+
+
+
+
+## Performance
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+
+[1] https://hbase.apache.org/
+
+[2] https://juejin.cn/post/6844904190968332295
+
+[3] https://research.google/pubs/pub27898/
 
