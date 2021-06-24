@@ -104,7 +104,7 @@ client: no need to ask the location of tablet server, direct communcate to table
 
 ### Table Location
 
-![1624448788760](C:\Users\alantong\Desktop\vintmd.github.io\photo\1624448788760.png)
+![1624448788760](https://vintmd.github.io/photo/1624448788760.png)
 
 1) chubby file contains the location of root tablet.
 
@@ -154,7 +154,7 @@ clients can group multi column families together into a local group.
 
 stablet server can load these group sstable into memory(same locality group sstable data is sequence, which can be used by block cache to improve the read efficiency)
 
-###Compression
+### Compression
 
 large content use the compression algorithm or a large locality group to compress.
 
