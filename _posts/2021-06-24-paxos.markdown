@@ -1,0 +1,29 @@
+# Paxos review
+
+from the paxos to multi paxos.
+
+
+
+## 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Reference
+
+[1] chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=https%3A%2F%2Flamport.azurewebsites.net%2Fpubs%2Fpaxos-simple.pdf
+
+[2] https://en.wikipedia.org/wiki/Paxos_(computer_science)
+
+[3] https://zhuanlan.zhihu.com/p/44106775
+
+[4] https://liu-jianhao.github.io/2019/05/paxosmulti-paxos%E8%AF%A6%E8%A7%A3/

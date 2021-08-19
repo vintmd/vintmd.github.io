@@ -1,0 +1,16 @@
+#  Chubby review
+
+Lock service for loosely-coupled distributed systems.
+
+## Introduction
+
+![1624588192680](C:\Users\alantong\AppData\Local\Temp\1624588192680.png)
+
+chubby's instance call the cell. chubby's client interface such like a simple file system that performs whole-file reads and writes, augmented with advisory locks and with notification of various events such as file modfiication.
+
+
+
+
+
+
+
