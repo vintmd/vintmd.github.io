@@ -112,6 +112,106 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/2021-06-17-bigtable/" class="link black dim">
+        Bigtable review
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      BigTable review A distributed storage system for managing structed data.
+Introduction   Dose not support full relational data model
+  It provides clients with a simple data model which support the dynamic control over data layout and format.
+  Data is indexed using row and column names that can be arbirtary strings.
+  Data model sparse, distributed, persistent multi-dimensional sorted map!
+map is indexed by a row key, column key and a timestamp.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2021-06-24-chubby/" class="link black dim">
+        Chubby review
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Chubby review Lock service for loosely-coupled distributed systems.
+Introduction chubby&rsquo;s instance call the cell. chubby&rsquo;s client interface such like a simple file system that performs whole-file reads and writes, augmented with advisory locks and with notification of various events such as file modfiication.
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2021-06-09-google-file-system/" class="link black dim">
+        Google file system review
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Google file system review   component failures.
+  files huge
+  most files mutated by appending new data rather than overwriting
+  API
+  Design   detect, tolerate, recover
+  modest number of large files
+  large streaming reads and small random reads
+  sequential writes that append data to files
+  concurrent append to the same file
+  data opration high sustained bandwidth(nearly)
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2021-06-16-mapreduce/" class="link black dim">
+        MR
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      MR data processing on large clusters
+  process a kv par to generate a set of intermediate kv pairs
+  reduce merge all intermediate values with same key
+  Programming model Implementation   user program fork the worker and master
+  master assign the map and reduce to the worker
+  map worker read each line of input files and it to local
+  reduce worker remote read the intermediate files
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2021-06-24-paxos/" class="link black dim">
+        Paxos review
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      Paxos review from the paxos to multi paxos.
+ Reference [1] chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=https%3A%2F%2Flamport.azurewebsites.net%2Fpubs%2Fpaxos-simple.pdf
+[2] https://en.wikipedia.org/wiki/Paxos_(computer_science)
+[3] https://zhuanlan.zhihu.com/p/44106775
+[4] https://liu-jianhao.github.io/2019/05/paxosmulti-paxos%E8%AF%A6%E8%A7%A3/
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/try/" class="link black dim">
         test the org photo
       </a>
@@ -121,6 +221,24 @@
 second way
 !testtest
 waht 
+    </div>
+  </div>
+</div>
+
+        
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/2021-06-17-yarn-process/" class="link black dim">
+        yarn process
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      yarn process 1）client subbmit an application to ask the resource manager to get an instance of application master.
+resource manager get back an application ID which used by client to watch resource infomation.
+ resource manager find a useful container in node manager, then run the application master instance in this container.(app mstr run in one of the container, this also can seem as one container)
+  app master regist info into the RM
     </div>
   </div>
 </div>
