@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Google file system review   component failures.
+  files huge
+  most files mutated by appending new data rather than overwriting
+  API
+  Design   detect, tolerate, recover
+  modest number of large files
+  large streaming reads and small random reads
+  sequential writes that append data to files
+  concurrent append to the same file
+  data opration high sustained bandwidth(nearly)">
+    <meta name="generator" content="Hugo 0.82.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Google file system review   component failures.
+  files huge
+  most files mutated by appending new data rather than overwriting
+  API
+  Design   detect, tolerate, recover
+  modest number of large files
+  large streaming reads and small random reads
+  sequential writes that append data to files
+  concurrent append to the same file
+  data opration high sustained bandwidth(nearly)" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/2021-06-09-google-file-system/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Google file system review   component failures.
+  files huge
+  most files mutated by appending new data rather than overwriting
+  API
+  Design   detect, tolerate, recover
+  modest number of large files
+  large streaming reads and small random reads
+  sequential writes that append data to files
+  concurrent append to the same file
+  data opration high sustained bandwidth(nearly)">
+
+<meta itemprop="wordCount" content="702">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Google file system review   component failures.
+  files huge
+  most files mutated by appending new data rather than overwriting
+  API
+  Design   detect, tolerate, recover
+  modest number of large files
+  large streaming reads and small random reads
+  sequential writes that append data to files
+  concurrent append to the same file
+  data opration high sustained bandwidth(nearly)"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/2021-06-09-google-file-system/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/2021-06-09-google-file-system/&amp;text=" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/2021-06-09-google-file-system/&amp;title=" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="google-file-system-review">Google file system review</h1>
+<ol>
+<li>
+<p>component failures.</p>
+</li>
+<li>
+<p>files huge</p>
+</li>
+<li>
+<p>most files mutated by appending new data rather than overwriting</p>
+</li>
+<li>
+<p>API</p>
+</li>
+</ol>
+<h2 id="design">Design</h2>
+<ol>
+<li>
+<p>detect, tolerate, recover</p>
+</li>
+<li>
+<p>modest number of large files</p>
+</li>
+<li>
+<p>large streaming reads and small random reads</p>
+</li>
+<li>
+<p>sequential writes that append data to files</p>
+</li>
+<li>
+<p>concurrent append to the same file</p>
+</li>
+<li>
+<p>data opration high sustained bandwidth(nearly)</p>
+</li>
+</ol>
+<h2 id="arch">Arch</h2>
+<p><img src="https://vintmd.github.io/photo/1623293837727.png" alt="1623293837727"></p>
+<ol>
+<li>
+<p>master control the each chunk server, each block locations and other meta infomations</p>
+</li>
+<li>
+<p>client ask the file chunk location to master, send data to random(nearly) chunkserver</p>
+</li>
+<li>
+<p>chunkserver organize the each chunk replicas, replica the data from client(or other chunkserver) to next</p>
+</li>
+</ol>
+<p>secondary chunkserver</p>
+<h2 id="consistency-model">Consistency model</h2>
+<p><img src="https://vintmd.github.io/photo/1623296366858.png" alt="1623296366858"></p>
+<ol>
+<li>
+<p>master control the global total order which used to apply mutation to one chunk</p>
+</li>
+<li>
+<p>use the chunk version to detect each chunk mutation(stale replicas delete by GC)</p>
+</li>
+</ol>
+<ul>
+<li>ofs use the central xlog id asgin give the mutation order, avoid the consistency issues on different machine.</li>
+</ul>
+<ol start="3">
+<li>master use the heartbeat to the chunkserver infomation(checksum) to detect stale chunk</li>
+</ol>
+<h2 id="interaction">Interaction</h2>
+<h3 id="lease-and-mutaion-order">Lease and mutaion order</h3>
+<p><img src="https://vintmd.github.io/photo/1623297437281.png" alt="1623297437281"></p>
+<ol>
+<li>
+<p>client ask the primary(hold the lease) and other chunk location</p>
+</li>
+<li>
+<p>cache the master return info</p>
+</li>
+<li>
+<p>replica data to replica chunkserver one by one(random)</p>
+</li>
+<li>
+<p>after replica all data, client ask the primary to decide the log order</p>
+</li>
+</ol>
+<ul>
+<li>it is same to the ofs which insert the xlog id after commit meta data into db</li>
+<li>it decide the mutaion order by primary replica.</li>
+</ul>
+<ol start="5">
+<li>
+<p>primary give the order to other replicas</p>
+</li>
+<li>
+<p>return the info whether sussess  decide the mutaion order</p>
+</li>
+<li>
+<p>give the result return to the client.</p>
+</li>
+</ol>
+<ul>
+<li>lease give the control of master to control each chunk server!</li>
+</ul>
+<h2 id="automic-record-append">Automic record append</h2>
+<ol>
+<li>
+<p>merge the scattered appended record.</p>
+</li>
+<li>
+<p>replica the record append to each one chunkserver</p>
+</li>
+</ol>
+<ul>
+<li>ofs use the txn to ensure the automic of the commit and xlog</li>
+</ul>
+<h2 id="snapshot">Snapshot</h2>
+<p><img src="https://vintmd.github.io/photo/1623309149425.png" alt="1623309149425"></p>
+<p>when master  receive the snapshot request, it release all the chunk server leases which can give the control that write to chunk back to master. when during this time ouccr the chunk write, it can copy the new chunk C` and replica this new chunk to other replicas.</p>
+<ul>
+<li>ofs use the Cow to cut the memory used. [Cow on btree][http://www.bzero.se/ldapd/btree.html]</li>
+</ul>
+<h2 id="master-process">Master process</h2>
+<h3 id="namespace-and-locking">Namespace and locking</h3>
+<ol>
+<li>
+<p>namespace same to the ofs each memory engine to maintain the struct of tree dir.</p>
+</li>
+<li>
+<p>add the lock each level.</p>
+</li>
+</ol>
+<ul>
+<li>ofs memory engine use the global lock.</li>
+<li>ofs db engine use txn share mode to lock the parent inode.</li>
+</ul>
+<p><img src="https://vintmd.github.io/photo/1623311148274.png" alt="1623311148274"></p>
+<h3 id="replica-placement">Replica placement</h3>
+<p>maximize data reliability and availability, and maximize net-wor kbandwidth utilization.</p>
+<h3 id="creation-re-replication-rebalancing">Creation, Re-replication, Rebalancing</h3>
+<p><img src="https://vintmd.github.io/photo/1623314173358.png" alt="1623314173358"></p>
+<ol>
+<li>
+<p>creation relate the space utilization, write behand(batch way) and the replica chunk spead.</p>
+</li>
+<li>
+<p>re-replication according the priority(the number of lose chunk) to replic the lose chunk.</p>
+</li>
+<li>
+<p>rebalancing master period to do according the average disk space.</p>
+</li>
+</ol>
+<ul>
+<li>rebalancing in ofs, the root server can asign the file system to each different meta server</li>
+</ul>
+<h2 id="gc">GC</h2>
+<p>distributed garbage collection knowledge</p>
+<p>after all opration the master trigger the period scan the chunks from the heart beat whether difference to the memory dir tree to decide whether clean the chunks!</p>
+<p><img src="https://vintmd.github.io/photo/1623317050747.png" alt="1623317050747"></p>
+<ul>
+<li>ofs gc and life cycle are all bypass system which offer the interface to operation db data</li>
+</ul>
+<ol>
+<li>
+<p>simple and reliable</p>
+</li>
+<li>
+<p>merge storage reclamation into background</p>
+</li>
+<li>
+<p>delay in reclaiming provide safety net against irreversible deletion</p>
+</li>
+</ol>
+<ul>
+<li>which same to the ofs this way might influence the efficient</li>
+</ul>
+<h2 id="fault-tolerance">Fault tolerance</h2>
+<h3 id="available">Available</h3>
+<ol>
+<li>fast recover</li>
+</ol>
+<ul>
+<li>ofs use the parallel load snapshot and apply xlog to fast recover</li>
+</ul>
+<ol start="2">
+<li>chunk replication</li>
+</ol>
+<ul>
+<li>same to data stream in cos which use parity or eraseure codes</li>
+</ul>
+<ol start="3">
+<li>master replication</li>
+</ol>
+<p>record log replica between each master, shadow master provide the read-only access even master is done.</p>
+<ul>
+<li>like ofs use the election which follower catch up the xlog to keep the same dir tree to the master as far as possible.</li>
+<li>only one master can create and delete replicas to prevent the split of brain issues.</li>
+</ul>
+<h3 id="data-intergrity">Data intergrity</h3>
+<p>chunkserver period detect the stale chunk(each chunk broken up into 64KB blocks, each has 32 bit checksum)</p>
+<ul>
+<li>first and last blocks of the range being overwriten which need to be checked</li>
+</ul>
+<h3 id="diagnostic-tools">Diagnostic tools</h3>
+<p>logs and online monitor</p>
+<h2 id="performance-mainest">Performance mainest</h2>
+<ol>
+<li>read, write, append records</li>
+</ol>
+<ul>
+<li>ofs read and write give to the cos</li>
+<li>ofs append records give to the db</li>
+<li>write behand and read ahead</li>
+</ul>
+<ol start="2">
+<li>google file system&rsquo;s read performance is better to write(write three or more replicas)</li>
+</ol>
+<h2 id="reference">Reference</h2>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  My New Hugo Site 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>

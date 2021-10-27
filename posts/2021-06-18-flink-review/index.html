@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="Flink review Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.
+suit ETL, analytics and event-driven applications.
+Process of commit job flink can use the yarn, apache mesos and k8s to manage the resource.
+as the photo shows the yarn commit job process (mesos and k8s on the other article learn):
+  Flink client send the jars and configuartions to hdfs.">
+    <meta name="generator" content="Hugo 0.82.1" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+<link rel="stylesheet" href="/ananke/css/main.min.css" >
+
+
+
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="" />
+<meta property="og:description" content="Flink review Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.
+suit ETL, analytics and event-driven applications.
+Process of commit job flink can use the yarn, apache mesos and k8s to manage the resource.
+as the photo shows the yarn commit job process (mesos and k8s on the other article learn):
+  Flink client send the jars and configuartions to hdfs." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/2021-06-18-flink-review/" /><meta property="article:section" content="posts" />
+
+
+
+<meta itemprop="name" content="">
+<meta itemprop="description" content="Flink review Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.
+suit ETL, analytics and event-driven applications.
+Process of commit job flink can use the yarn, apache mesos and k8s to manage the resource.
+as the photo shows the yarn commit job process (mesos and k8s on the other article learn):
+  Flink client send the jars and configuartions to hdfs.">
+
+<meta itemprop="wordCount" content="457">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="Flink review Apache Flink is a framework and distributed processing engine for stateful computations over unbounded and bounded data streams.
+suit ETL, analytics and event-driven applications.
+Process of commit job flink can use the yarn, apache mesos and k8s to manage the resource.
+as the photo shows the yarn commit job process (mesos and k8s on the other article learn):
+  Flink client send the jars and configuartions to hdfs."/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=http://example.org/posts/2021-06-18-flink-review/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=http://example.org/posts/2021-06-18-flink-review/&amp;text=" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http://example.org/posts/2021-06-18-flink-review/&amp;title=" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1"></h1>
+      
+      
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h1 id="flink-review">Flink review</h1>
+<p>Apache Flink is a framework and distributed processing engine for stateful computations over <em>unbounded and bounded</em> data streams.</p>
+<p>suit ETL, analytics and event-driven applications.</p>
+<h2 id="process-of-commit-job">Process of commit job</h2>
+<p>flink can use the yarn, apache mesos and k8s to manage the resource.</p>
+<p>as the photo shows the yarn commit job process (mesos and k8s on the other article learn):</p>
+<ol>
+<li>
+<p>Flink client send the jars and configuartions to hdfs.</p>
+</li>
+<li>
+<p>Flink client submit the job to the resource manager.</p>
+</li>
+<li>
+<p>Resource manager start the application master in one node manager and init the job manager</p>
+</li>
+<li>
+<p>application master apply the resource to 5) start task manager on each node manger</p>
+</li>
+</ol>
+<p><img src="https://vintmd.github.io/photo/1624016394384.png" alt="1624016394384"></p>
+<h2 id="anatomy-of-a-flink-cluster">Anatomy of a flink cluster</h2>
+<p><img src="https://vintmd.github.io/photo/image-20210621145910650.png" alt="image-20210621145910650"></p>
+<ol>
+<li>
+<p>flink runtimes consists of two types of processes: a job manager and one or more task managers</p>
+</li>
+<li>
+<p>client is used to prepare and send a dataflow to the job manager</p>
+</li>
+<li>
+<p>job manager contains the a) resource manager which manages the task slots, which are the unitof resource sheduling in flink cluster; b) dispatch provides a rest interface to submit flink applications for execution and starts a new job master for each submit job; c) job master manage the execution of single job grahp, multiple jobs can run simultaneously each having its own job master.</p>
+</li>
+<li>
+<p>task manager execute the tasks of a dataflow, and buffer and exchange the data streams</p>
+</li>
+</ol>
+<h2 id="tasks-and-operator-chains">Tasks and Operator Chains</h2>
+<p><img src="https://vintmd.github.io/photo/image-20210621151444846.png" alt="image-20210621151444846"></p>
+<p>flink chains operator subtasks together into tasks.</p>
+<p>chains operators togehter into tasks is a useful optimization:</p>
+<p>it reduces the overhead of thread to thread handover and buffering.</p>
+<p>and increase overall throughput while decreasing latency.</p>
+<h2 id="task-slots-and-resources">Task Slots and Resources</h2>
+<ol>
+<li>
+<p>flink cluster needs exactly as many task slots as the highest parallelism used in the job</p>
+</li>
+<li>
+<p>It is easier to get better resource utilization. without slot sharing, the non-intensive source/map() subtasks woulod block as many resources as the resource intensive window subtask.</p>
+</li>
+</ol>
+<h2 id="exactly-once-end-to-end">Exactly once End-to-end</h2>
+<ol>
+<li>
+<p>your sources must be replayable and</p>
+</li>
+<li>
+<p>your sinks must be transactional( or idempotent)</p>
+</li>
+</ol>
+<h2 id="s3-sink-connector">S3 sink connector</h2>
+<p>connector sink the data to file system which implement the recoverable relate interface.</p>
+<p><img src="https://vintmd.github.io/photo/image-20210621153323615.png" alt="image-20210621153323615"></p>
+<p>file in each bucket contains three status: pending files, in-progress file and finished file.</p>
+<p>the mainest process of flink recover is use the checkpoint records the file path and offset, then truncate the in-progress file to relate position. and normal time append data to the in-progress file.</p>
+<p><img src="https://vintmd.github.io/photo/image-20210621164857677.png" alt="image-20210621164857677"></p>
+<p>object storage not support the truncate and append operation, so use the MPU to replace the append and truncate. checkpoint record file upload id and each upload parts meta infomation. if not write done a whole part use the put object operation upload this single file as the un-finish part which can be download continue to append write in local memory.</p>
+<p><img src="https://vintmd.github.io/photo/image-20210621153154271.png" alt="image-20210621153154271"></p>
+<p><img src="https://vintmd.github.io/photo/image-20210621164223236.png" alt="image-20210621164223236"></p>
+<p><img src="https://vintmd.github.io/photo/image-20210621164325500.png" alt="image-20210621164325500"></p>
+<p>what a magical thing MPU!</p>
+<h2 id="reference">Reference</h2>
+<p>[1] <a href="https://flink.apache.org/flink-architecture.html">https://flink.apache.org/flink-architecture.html</a></p>
+<p>[2] <a href="https://zhuanlan.zhihu.com/p/337222474">https://zhuanlan.zhihu.com/p/337222474</a></p>
+<p>[3] <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/learn-flink/fault_tolerance/">https://ci.apache.org/projects/flink/flink-docs-release-1.13/docs/learn-flink/fault_tolerance/</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
+    &copy;  My New Hugo Site 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+  </body>
+</html>
