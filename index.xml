@@ -6,7 +6,30 @@
     <description>Recent content on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 27 Oct 2021 11:26:18 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 27 Oct 2021 16:52:45 +0800</lastBuildDate><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>test the org photo third</title>
+      <link>http://example.org/posts/thirdtry/</link>
+      <pubDate>Wed, 27 Oct 2021 16:52:45 +0800</pubDate>
+      
+      <guid>http://example.org/posts/thirdtry/</guid>
+      <description>haha
+second way
+&amp;lt;./ox-hugo&amp;gt;
+target</description>
+    </item>
+    
+    <item>
+      <title>test the org photo</title>
+      <link>http://example.org/posts/secondtry/</link>
+      <pubDate>Wed, 27 Oct 2021 16:29:04 +0800</pubDate>
+      
+      <guid>http://example.org/posts/secondtry/</guid>
+      <description>haha
+second way
+testphot</description>
+    </item>
+    
     <item>
       <title>flink review</title>
       <link>http://example.org/posts/2021-06-18-flink-review/</link>
