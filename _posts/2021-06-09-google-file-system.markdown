@@ -1,6 +1,6 @@
 # Google file system review
 
-1) component failures
+1) component failures.
 
 2) files huge
 
