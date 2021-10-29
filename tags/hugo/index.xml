@@ -6,18 +6,20 @@
     <description>Recent content in hugo on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Oct 2021 10:05:49 +0800</lastBuildDate><atom:link href="http://example.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 29 Oct 2021 10:38:35 +0800</lastBuildDate><atom:link href="http://example.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>test the org photo</title>
       <link>http://example.org/posts/try/</link>
-      <pubDate>Fri, 29 Oct 2021 10:05:49 +0800</pubDate>
+      <pubDate>Fri, 29 Oct 2021 10:38:35 +0800</pubDate>
       
       <guid>http://example.org/posts/try/</guid>
       <description>haha
 second way
 !testtest
 waht content photo
-baidu</description>
+baidu
+infos
+infos-prov  func test(){ } func main() { test() } </description>
     </item>
     
     <item>
