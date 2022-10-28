@@ -6,17 +6,19 @@
     
     <title>Google file system review | My New Hugo Site</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="Google file system review   component failures.
-  files huge
-  most files mutated by appending new data rather than overwriting
-  API
-  Design   detect, tolerate, recover
-  modest number of large files
-  large streaming reads and small random reads
-  sequential writes that append data to files
-  concurrent append to the same file
-  data opration high sustained bandwidth(nearly)">
-    <meta name="generator" content="Hugo 0.82.1" />
+    <meta name="description" content="Google file system review component failures.
+files huge
+most files mutated by appending new data rather than overwriting
+API
+Design detect, tolerate, recover
+modest number of large files
+large streaming reads and small random reads
+sequential writes that append data to files
+concurrent append to the same file
+data opration high sustained bandwidth(nearly)
+Arch master control the each chunk server, each block locations and other meta infomations
+client ask the file chunk location to master, send data to random(nearly) chunkserver">
+    <meta name="generator" content="Hugo 0.104.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -36,46 +38,52 @@
     
     
     <meta property="og:title" content="Google file system review" />
-<meta property="og:description" content="Google file system review   component failures.
-  files huge
-  most files mutated by appending new data rather than overwriting
-  API
-  Design   detect, tolerate, recover
-  modest number of large files
-  large streaming reads and small random reads
-  sequential writes that append data to files
-  concurrent append to the same file
-  data opration high sustained bandwidth(nearly)" />
+<meta property="og:description" content="Google file system review component failures.
+files huge
+most files mutated by appending new data rather than overwriting
+API
+Design detect, tolerate, recover
+modest number of large files
+large streaming reads and small random reads
+sequential writes that append data to files
+concurrent append to the same file
+data opration high sustained bandwidth(nearly)
+Arch master control the each chunk server, each block locations and other meta infomations
+client ask the file chunk location to master, send data to random(nearly) chunkserver" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/2021-06-09-google-file-system/" /><meta property="article:section" content="posts" />
 
-<meta property="article:modified_time" content="2021-10-27T17:47:22&#43;08:00" />
+<meta property="article:modified_time" content="2021-10-27T17:47:22+08:00" />
 
 <meta itemprop="name" content="Google file system review">
-<meta itemprop="description" content="Google file system review   component failures.
-  files huge
-  most files mutated by appending new data rather than overwriting
-  API
-  Design   detect, tolerate, recover
-  modest number of large files
-  large streaming reads and small random reads
-  sequential writes that append data to files
-  concurrent append to the same file
-  data opration high sustained bandwidth(nearly)">
-<meta itemprop="dateModified" content="2021-10-27T17:47:22&#43;08:00" />
+<meta itemprop="description" content="Google file system review component failures.
+files huge
+most files mutated by appending new data rather than overwriting
+API
+Design detect, tolerate, recover
+modest number of large files
+large streaming reads and small random reads
+sequential writes that append data to files
+concurrent append to the same file
+data opration high sustained bandwidth(nearly)
+Arch master control the each chunk server, each block locations and other meta infomations
+client ask the file chunk location to master, send data to random(nearly) chunkserver">
+<meta itemprop="dateModified" content="2021-10-27T17:47:22+08:00" />
 <meta itemprop="wordCount" content="702">
 <meta itemprop="keywords" content="emacs,orgmode,hugo,github," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Google file system review"/>
-<meta name="twitter:description" content="Google file system review   component failures.
-  files huge
-  most files mutated by appending new data rather than overwriting
-  API
-  Design   detect, tolerate, recover
-  modest number of large files
-  large streaming reads and small random reads
-  sequential writes that append data to files
-  concurrent append to the same file
-  data opration high sustained bandwidth(nearly)"/>
+<meta name="twitter:description" content="Google file system review component failures.
+files huge
+most files mutated by appending new data rather than overwriting
+API
+Design detect, tolerate, recover
+modest number of large files
+large streaming reads and small random reads
+sequential writes that append data to files
+concurrent append to the same file
+data opration high sustained bandwidth(nearly)
+Arch master control the each chunk server, each block locations and other meta infomations
+client ask the file chunk location to master, send data to random(nearly) chunkserver"/>
 
 	
   </head>
@@ -469,7 +477,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
-    &copy;  My New Hugo Site 2021 
+    &copy;  My New Hugo Site 2022 
   </a>
     <div>
 

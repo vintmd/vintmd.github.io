@@ -6,20 +6,23 @@
     <description>Recent content in hugo on My New Hugo Site</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 29 Oct 2021 10:38:35 +0800</lastBuildDate><atom:link href="http://example.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 22 Dec 2021 15:33:12 +0800</lastBuildDate><atom:link href="http://example.org/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>test the org photo</title>
       <link>http://example.org/posts/try/</link>
-      <pubDate>Fri, 29 Oct 2021 10:38:35 +0800</pubDate>
+      <pubDate>Wed, 22 Dec 2021 15:33:12 +0800</pubDate>
       
       <guid>http://example.org/posts/try/</guid>
       <description>haha
 second way
-!testtest
+third way
+!
+test
+test
 waht content photo
 baidu
 infos
-infos-prov  func test(){ } func main() { test() } </description>
+infos-prov func test(){ fmt.Println(&amp;#34;test&amp;#34;) } func main() { test() } </description>
     </item>
     
     <item>
@@ -29,11 +32,12 @@ infos-prov  func test(){ } func main() { test() } </description>
       
       <guid>http://example.org/posts/2021-06-17-bigtable/</guid>
       <description>BigTable review A distributed storage system for managing structed data.
-Introduction   Dose not support full relational data model
-  It provides clients with a simple data model which support the dynamic control over data layout and format.
-  Data is indexed using row and column names that can be arbirtary strings.
-  Data model sparse, distributed, persistent multi-dimensional sorted map!
-map is indexed by a row key, column key and a timestamp.</description>
+Introduction Dose not support full relational data model
+It provides clients with a simple data model which support the dynamic control over data layout and format.
+Data is indexed using row and column names that can be arbirtary strings.
+Data model sparse, distributed, persistent multi-dimensional sorted map!
+map is indexed by a row key, column key and a timestamp.
+each value is an uniterpreted array of bytes.</description>
     </item>
     
     <item>
@@ -52,16 +56,18 @@ Introduction chubby&amp;rsquo;s instance call the cell. chubby&amp;rsquo;s clien
       <pubDate>Wed, 27 Oct 2021 17:47:22 +0800</pubDate>
       
       <guid>http://example.org/posts/2021-06-09-google-file-system/</guid>
-      <description>Google file system review   component failures.
-  files huge
-  most files mutated by appending new data rather than overwriting
-  API
-  Design   detect, tolerate, recover
-  modest number of large files
-  large streaming reads and small random reads
-  sequential writes that append data to files
-  concurrent append to the same file
-  data opration high sustained bandwidth(nearly)</description>
+      <description>Google file system review component failures.
+files huge
+most files mutated by appending new data rather than overwriting
+API
+Design detect, tolerate, recover
+modest number of large files
+large streaming reads and small random reads
+sequential writes that append data to files
+concurrent append to the same file
+data opration high sustained bandwidth(nearly)
+Arch master control the each chunk server, each block locations and other meta infomations
+client ask the file chunk location to master, send data to random(nearly) chunkserver</description>
     </item>
     
     <item>
@@ -71,12 +77,13 @@ Introduction chubby&amp;rsquo;s instance call the cell. chubby&amp;rsquo;s clien
       
       <guid>http://example.org/posts/2021-06-16-mapreduce/</guid>
       <description>MR data processing on large clusters
-  process a kv par to generate a set of intermediate kv pairs
-  reduce merge all intermediate values with same key
-  Programming model Implementation   user program fork the worker and master
-  master assign the map and reduce to the worker
-  map worker read each line of input files and it to local
-  reduce worker remote read the intermediate files</description>
+process a kv par to generate a set of intermediate kv pairs
+reduce merge all intermediate values with same key
+Programming model Implementation user program fork the worker and master
+master assign the map and reduce to the worker
+map worker read each line of input files and it to local
+reduce worker remote read the intermediate files
+Master data structures worker&amp;rsquo;s task(map or reduce) has three status idle, in-progress and completed, master communcate to</description>
     </item>
     
     <item>
@@ -86,7 +93,7 @@ Introduction chubby&amp;rsquo;s instance call the cell. chubby&amp;rsquo;s clien
       
       <guid>http://example.org/posts/2021-06-24-paxos/</guid>
       <description>Paxos review from the paxos to multi paxos.
- Reference [1] chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=https%3A%2F%2Flamport.azurewebsites.net%2Fpubs%2Fpaxos-simple.pdf
+Reference [1] chrome-extension://cdonnmffkdaoajfknoeeecmchibpmkmg/assets/pdf/web/viewer.html?file=https%3A%2F%2Flamport.azurewebsites.net%2Fpubs%2Fpaxos-simple.pdf
 [2] https://en.wikipedia.org/wiki/Paxos_(computer_science)
 [3] https://zhuanlan.zhihu.com/p/44106775
 [4] https://liu-jianhao.github.io/2019/05/paxosmulti-paxos%E8%AF%A6%E8%A7%A3/</description>
@@ -100,8 +107,8 @@ Introduction chubby&amp;rsquo;s instance call the cell. chubby&amp;rsquo;s clien
       <guid>http://example.org/posts/2021-06-17-yarn-process/</guid>
       <description>yarn process 1）client subbmit an application to ask the resource manager to get an instance of application master.
 resource manager get back an application ID which used by client to watch resource infomation.
- resource manager find a useful container in node manager, then run the application master instance in this container.(app mstr run in one of the container, this also can seem as one container)
-  app master regist info into the RM</description>
+resource manager find a useful container in node manager, then run the application master instance in this container.(app mstr run in one of the container, this also can seem as one container)
+app master regist info into the RM</description>
     </item>
     
     <item>
@@ -114,7 +121,8 @@ resource manager get back an application ID which used by client to watch resour
 suit ETL, analytics and event-driven applications.
 Process of commit job flink can use the yarn, apache mesos and k8s to manage the resource.
 as the photo shows the yarn commit job process (mesos and k8s on the other article learn):
-  Flink client send the jars and configuartions to hdfs.</description>
+Flink client send the jars and configuartions to hdfs.
+Flink client submit the job to the resource manager.</description>
     </item>
     
   </channel>

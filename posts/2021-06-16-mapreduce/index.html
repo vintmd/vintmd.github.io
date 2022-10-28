@@ -7,13 +7,14 @@
     <title>MR | My New Hugo Site</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="MR data processing on large clusters
-  process a kv par to generate a set of intermediate kv pairs
-  reduce merge all intermediate values with same key
-  Programming model Implementation   user program fork the worker and master
-  master assign the map and reduce to the worker
-  map worker read each line of input files and it to local
-  reduce worker remote read the intermediate files">
-    <meta name="generator" content="Hugo 0.82.1" />
+process a kv par to generate a set of intermediate kv pairs
+reduce merge all intermediate values with same key
+Programming model Implementation user program fork the worker and master
+master assign the map and reduce to the worker
+map worker read each line of input files and it to local
+reduce worker remote read the intermediate files
+Master data structures worker&rsquo;s task(map or reduce) has three status idle, in-progress and completed, master communcate to">
+    <meta name="generator" content="Hugo 0.104.3" />
     
     
       <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -34,36 +35,39 @@
     
     <meta property="og:title" content="MR" />
 <meta property="og:description" content="MR data processing on large clusters
-  process a kv par to generate a set of intermediate kv pairs
-  reduce merge all intermediate values with same key
-  Programming model Implementation   user program fork the worker and master
-  master assign the map and reduce to the worker
-  map worker read each line of input files and it to local
-  reduce worker remote read the intermediate files" />
+process a kv par to generate a set of intermediate kv pairs
+reduce merge all intermediate values with same key
+Programming model Implementation user program fork the worker and master
+master assign the map and reduce to the worker
+map worker read each line of input files and it to local
+reduce worker remote read the intermediate files
+Master data structures worker&rsquo;s task(map or reduce) has three status idle, in-progress and completed, master communcate to" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/posts/2021-06-16-mapreduce/" /><meta property="article:section" content="posts" />
 
-<meta property="article:modified_time" content="2021-10-27T17:47:22&#43;08:00" />
+<meta property="article:modified_time" content="2021-10-27T17:47:22+08:00" />
 
 <meta itemprop="name" content="MR">
 <meta itemprop="description" content="MR data processing on large clusters
-  process a kv par to generate a set of intermediate kv pairs
-  reduce merge all intermediate values with same key
-  Programming model Implementation   user program fork the worker and master
-  master assign the map and reduce to the worker
-  map worker read each line of input files and it to local
-  reduce worker remote read the intermediate files">
-<meta itemprop="dateModified" content="2021-10-27T17:47:22&#43;08:00" />
+process a kv par to generate a set of intermediate kv pairs
+reduce merge all intermediate values with same key
+Programming model Implementation user program fork the worker and master
+master assign the map and reduce to the worker
+map worker read each line of input files and it to local
+reduce worker remote read the intermediate files
+Master data structures worker&rsquo;s task(map or reduce) has three status idle, in-progress and completed, master communcate to">
+<meta itemprop="dateModified" content="2021-10-27T17:47:22+08:00" />
 <meta itemprop="wordCount" content="425">
 <meta itemprop="keywords" content="emacs,orgmode,hugo,github," /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="MR"/>
 <meta name="twitter:description" content="MR data processing on large clusters
-  process a kv par to generate a set of intermediate kv pairs
-  reduce merge all intermediate values with same key
-  Programming model Implementation   user program fork the worker and master
-  master assign the map and reduce to the worker
-  map worker read each line of input files and it to local
-  reduce worker remote read the intermediate files"/>
+process a kv par to generate a set of intermediate kv pairs
+reduce merge all intermediate values with same key
+Programming model Implementation user program fork the worker and master
+master assign the map and reduce to the worker
+map worker read each line of input files and it to local
+reduce worker remote read the intermediate files
+Master data structures worker&rsquo;s task(map or reduce) has three status idle, in-progress and completed, master communcate to"/>
 
 	
   </head>
@@ -337,7 +341,7 @@
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://example.org/" >
-    &copy;  My New Hugo Site 2021 
+    &copy;  My New Hugo Site 2022 
   </a>
     <div>
 
